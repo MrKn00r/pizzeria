@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script');
+
+
+:root{
+    --st-bg-color: #FEF5F5;
+    --sd-bg-color: #FEECEC;
+    --th-bg-color: #FBC5C5;
+    --font-color: #353535;
+    --st-font-family: 'Josefin Sans';
+    --sd-font-family: 'Dancing Script';
+    --btn1-bg-color: #FBC400;
+    --btn2-bg-color: #F45757;
+}
+
+.container-fluid{
+    background-color: var(--st-bg-color);
+
+
+
+
+}
+.delivery{
+    background-color: var(--th-bg-color);
+    padding: 20px;
+}
+
+.delivery-text{
+    font-size: 12px;
+    color: var(--font-color);
+    font-family: var(--st-font-family);
+}
