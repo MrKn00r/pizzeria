@@ -1,280 +1,324 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script');
+/* FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script");
 
-
-:root{
-    --st-bg-color: #FEF5F5;
-    --sd-bg-color: #FEECEC;
-    --th-bg-color: #FBC5C5;
-    --font-color: #353535;
-    --st-font-family: 'Josefin Sans';
-    --sd-font-family: 'Dancing Script';
-    --btn1-bg-color: #FBC400;
-    --btn2-bg-color: #F45757;
-}
-
-.container-fluid{
-    background-color: var(--st-bg-color);
-    width: 100%;
-}
-.delivery{
-    background-color: var(--th-bg-color);
-    padding: 20px;
-    transition: all 0.3s;
-    bottom: 0;
-    left: 0;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
-}
-.delivery-text{
-    font-size: 12px;
-    color: var(--font-color);
-    font-family: var(--st-font-family);
-}
-.delivery.active{
-    
-    bottom: 200px;
-    opacity: 0;
-    width: 0;
-    height: 0;
-    margin: 0;
-    padding: 0;
-    transition: all 0.6s;
-}
-.site-name{
-    font-family: var(--sd-font-family);
-    font-weight: bold;
-    font-size: 40px;
-
-}
-.banner{
-    margin: 0;
-    padding: 0px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 120px;
-    position: sticky;
-    z-index: 50;
-    top: 0;
-    background-color: var(--st-bg-color);
-
-}
-.logo-png img{
-    width: 100px;
-}
-.row{margin: 0%;}
-.nav{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.nav-link{
-    font-size: 12px;
+/* VARIABLES */
+:root {
+  --st-bg-color: #fef5f5;
+  --sd-bg-color: #feecec;
+  --th-bg-color: #fbc5c5;
+  --font-color: #353535;
+  --st-font-family: "Josefin Sans";
+  --sd-font-family: "Dancing Script";
+  --btn1-bg-color: #fbc400;
+  --btn2-bg-color: #f45757;
 }
 
+/* DELIVERY */
+.delivery {
+  margin: 0;
+  padding: 20px;
+  width: 100vw;
+  bottom: 0;
+  left: 0;
+  background-color: var(--th-bg-color);
+  transition: all 0.3s;
+}
+.delivery-text {
+  font-size: 12px;
+  color: var(--font-color);
+  font-family: var(--st-font-family);
+}
+.delivery.active {
+  margin: 0;
+  padding: 0;
+  width: 0;
+  height: 0;
+  bottom: 200px;
+  opacity: 0;
+  transition: all 0.6s;
+}
+/* MAIN CSS */
+.container-fluid {
+  margin: 0;
+  padding: 0%;
+  width: 100%;
+  background-color: var(--st-bg-color);
+}
+
+/* BANNER */
+.site-name {
+  font-family: var(--sd-font-family);
+  font-size: 40px;
+  font-weight: bold;
+}
+.banner {
+  margin: 0;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  width: 100%;
+  height: 120px;
+  top: 0;
+  z-index: 50;
+  background-color: var(--st-bg-color);
+}
+.banner.active {
+  opacity: 1;
+}
+.logo-png img {
+  width: 100px;
+}
+.row {
+  margin: 0%;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-link {
+  font-size: 12px;
+}
+
+hr {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  background-color: black;
+  color: black;
+}
+hr.active {
+  display: none;
+}
 /*---------------------------- "Burger" menu button ----------------------------*/
-.menu-btn{
-    width:40px;
-    height: 35px;
-    position: absolute;
-    right: 5px;
-    transition: .2s;
+.menu-btn {
+  width: 40px;
+  height: 35px;
+  position: absolute;
+  right: 5px;
+  transition: 0.2s;
 }
 .menu-btn.active {
-    transform: rotate(-90deg);
-   }
+  transform: rotate(-90deg);
+}
 .menu-btn div {
-    position: absolute;
-    width: 100%;
-    height: 10px;
-    background-color: var(--th-bg-color);
-    left: 0;
-    transition: top .2s .2s, bottom .2s .2s, opacity .2s .2s, transform .2s .4s;
- 
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  left: 0;
+  background-color: var(--th-bg-color);
+  transition: top 0.2s 0.2s, bottom 0.2s 0.2s, opacity 0.2s 0.2s,
+    transform 0.2s 0.4s;
 }
 /*---------------------------- first line ----------------------------*/
 .menu-btn #div1 {
-    top: 0
+  top: 0;
 }
 .menu-btn.active #div1 {
-    top: calc(50% - 5px);
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
+  top: calc(50% - 5px);
+  transform: rotate(45deg);
 }
 /*---------------------------- second line ----------------------------*/
 .menu-btn #div2 {
-    top: calc(50% - 5px);
+  top: calc(50% - 5px);
 }
 .menu-btn.active #div2 {
-    opacity: 0;
+  opacity: 0;
 }
 /*---------------------------- third line ----------------------------*/
 .menu-btn #div3 {
-    bottom: 0;
+  bottom: 0;
 }
 .menu-btn.active #div3 {
-    bottom: calc(50% - 5px);
-    transform: rotate(-45deg);
+  bottom: calc(50% - 5px);
+  transform: rotate(-45deg);
 }
 
 /*---------------------------- Mobile menu ----------------------------*/
-.mobileMenu{
-    background: var(--th-bg-color);
-    left: 100%;
-    position: fixed;
-    transition: all 0.6s;
-    -webkit-transition: all 0.6s;
-    -moz-transition: all 0.6s;
-    -ms-transition: all 0.6s;
-    -o-transition: all 0.6s;
-    width: 100%;
-    opacity: 0;
-    top: 115px;
-    height: 100%;
-    display: flex;
-    z-index: 50;
-    
+.mobileMenu {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 115px;
+  left: 100%;
+  background: var(--th-bg-color);
+  transition: all 0.6s;
+  opacity: 0;
+  z-index: 50;
 }
-.mobileMenu.active{
-    left: 0%;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 115px;
-    overflow-x: hidden;
-    opacity: 1;
-    transition: all 0.6s;
-    -webkit-transition: all 0.6s;
-    -moz-transition: all 0.6s;
-    -ms-transition: all 0.6s;
-    -o-transition: all 0.6s;
+.mobileMenu.active {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 115px;
+  left: 0%;
+  overflow-x: hidden;
+  opacity: 1;
+  transition: all 0.6s;
 }
-.mobileMenu ul{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 0;
-    padding: 0;
+.mobileMenu ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
-.mobileMenu li{
-    margin: 0%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    list-style: none;
-    height: 16.98%;
-    text-align: center;
-    width: 100vw;
-    border: 1px solid black;
+.mobileMenu li, .mobileMenu span{
+  margin: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 16.98%;
+  border: 1px solid black;
+  list-style: none;
+  text-align: center;
 }
-.mobileMenu li a{
-    text-decoration: none;
-    color: white;
+.mobileMenu li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* OTHER */
+
+.reviews {
+  margin-top: 10px;
+  display: flex;
+}
+.star {
+  color: var(--btn1-bg-color);
 }
 
 
-
-/*---------------------------- media query ----------------------------*/
-
-@media (min-width:771px){
-    .menu-btn{
-        display: none;
-        opacity: 0;
-    }
-    .mobileMenu{
-        display: none;
-        opacity: 0;
-    }
-}
-
-@media (max-width:770px){
-    .pcMenu{
-        display: none;
-    }
+.slider.active {
+  display: none;
 }
 
 
 
-
-/* custom */
-
-
-.reviews{
-    display: flex;
-    margin-top: 10px;
-}
-.star{
-    color: var(--btn1-bg-color);
-}
-
-
-/* temp styles */
-.slider.active{
-    display: none;
-}
-
-/* .container-fluid{
-    background-color: black;
-} */
-
-
-/* .photos{
-    margin-right: 50px;
-}
-
- */
-
-
- section {
-    padding: 60px 0;
+/* TABS */
+section {
+  padding: 60px 0;
 }
 
 section .section-title {
-    text-align: center;
-    color: #007b5e;
-    margin-bottom: 50px;
-    text-transform: uppercase;
-}
-#tabs{
-	background: #007b5e;
-    color: #eee;
-}
-#tabs h6.section-title{
-    color: #eee;
+  margin-bottom: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  
 }
 
-#tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-    color: #f3f3f3;
-    background-color: transparent;
-    border-color: transparent transparent #f3f3f3;
-    border-bottom: 4px solid !important;
-    font-size: 20px;
-    font-weight: bold;
+
+#tabs .nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  background-color: transparent;
+  border-bottom: 2px solid !important;
+  font-size: 20px;
+  font-weight: bold;
 }
 #tabs .nav-tabs .nav-link {
-    border: 1px solid transparent;
-    border-top-left-radius: .25rem;
-    border-top-right-radius: .25rem;
-    color: #eee;
-    font-size: 20px;
+  border: 1px solid transparent;
+
+  color: var(--font-color);
+  font-family: var(--st-font-family);
+  font-size: 20px;
 }
-hr{
-    background-color: black; 
-    color: black; 
-    margin: 0; 
-    padding: 0; 
-    position: absolute;
-     width: 100%; 
-     top: 100%;
+
+
+.shopping-cart {
+  display: none;
+  top: 0;
 }
-hr.active{
+.open-cart{
+  color: #007b5e;
+}
+.shopping-cart.active {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 100;
+  background-color: blue;
+  color: red;
+}
+.row1{
+  display:flex;
+  color: white;
+  align-items: center;
+  justify-content: center;
+}
+.shopping-cart-text{
+  font-family: var(--st-font-family);
+  font-size: 32px;
+}
+
+/*---------------------------- media queries ----------------------------*/
+
+@media (min-width: 771px) {/* 771px */
+  .menu-btn {
     display: none;
+    opacity: 0;
+  }
+  .mobileMenu {
+    display: none;
+    opacity: 0;
+  }
+  .shopping-cart.active {
+    width: 40%;
+    min-height: 100vh;
+    left: 60%;
+  }
+  .slider{
+    max-width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .aa{
+
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+    align-items: center;
+  
+  }
+}
+
+
+
+@media (max-width: 770px) {
+  .pcMenu {
+    display: none;
+  }}
+
+.right{
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+
+.right img{
+  width: 90px;
+  height: 90px;
+  border-radius:50px;
+
+}
+.souce, .size{
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px;
+}
+someElement {
+  line-height:12px;
 }
