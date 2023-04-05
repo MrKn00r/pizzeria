@@ -40,6 +40,8 @@
 }
 /* MAIN CSS */
 .container-fluid {
+  
+  position: relative;
   margin: 0;
   padding: 0%;
   width: 100%;
@@ -51,6 +53,7 @@
   font-family: var(--sd-font-family);
   font-size: 40px;
   font-weight: bold;
+  pointer-events: none;
 }
 .banner {
   margin: 0;
@@ -83,16 +86,16 @@
   font-size: 12px;
 }
 
-hr {
+.banner hr {
   margin: 0;
   padding: 0;
   position: absolute;
   width: 100%;
   top: 100%;
-  background-color: black;
-  color: black;
+  background-color: var(--font-color);
+  color: var(--font-color);
 }
-hr.active {
+.banner hr.active {
   display: none;
 }
 /*---------------------------- "Burger" menu button ----------------------------*/
@@ -236,9 +239,9 @@ section .section-title {
   display: none;
   top: 0;
 }
-.open-cart{
+/* .open-cart{
   color: #007b5e;
-}
+} */
 .shopping-cart.active {
   display: flex;
   flex-direction: column;
@@ -247,18 +250,26 @@ section .section-title {
   width: 100%;
   min-height: 100vh;
   z-index: 100;
-  background-color: blue;
+  background-color: var(--sd-bg-color);
   color: red;
 }
 .row1{
   display:flex;
   color: white;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
-.shopping-cart-text{
+.shopping-cart-text-content{
   font-family: var(--st-font-family);
+  color: var(--font-color);
   font-size: 32px;
+
+   margin: 15px 0 0 0;
+}
+
+.close-cart{
+  color: var(--btn2-bg-color);
+  display: flex;
 }
 
 /*---------------------------- media queries ----------------------------*/
@@ -299,6 +310,10 @@ section .section-title {
   .pcMenu {
     display: none;
   }}
+@media (max-width: 780px) {
+  .site-name {
+    font-size: 34px;
+  }}
 
 .right{
   display: flex;
@@ -312,13 +327,55 @@ section .section-title {
   width: 90px;
   height: 90px;
   border-radius:50px;
-
+}
+.right h2{
+  font-weight: bold;
 }
 .souce, .size{
   display: flex;
   justify-content: flex-start;
   gap: 5px;
 }
-someElement {
-  line-height:12px;
+
+.souce-size{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.souce-size p{
+  line-height:40px;
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+.drink{
+  background-color: var(--th-bg-color);
+  border: 1px solid black;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  margin: 0%;
+  width: 100%;
+}
+
+
+/* HIDE RADIO */
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+[type=radio] + img {
+  cursor: pointer;
+}
+
+/* CHECKED STYLES */
+[type=radio]:checked + img {
+  outline: 2px solid #f00;
 }

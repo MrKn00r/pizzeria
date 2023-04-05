@@ -1,4 +1,6 @@
 
+
+/* VARIABLES */
 const menuBtn = document.querySelector(".menu-btn");
 const mobileMenu = document.querySelector(".mobileMenu");
 const delivery = document.querySelector(".delivery");
@@ -10,6 +12,18 @@ const openCart = document.querySelector(".open-cart");
 const mobileOpenCart = document.querySelector("span.open-cart");
 const banner = document.querySelector(".banner");
 const size = document.querySelector(".size img");
+
+
+window.addEventListener("scroll", () => {
+  if (
+    window.scrollY >= banner.offsetTop &&
+    !mobileMenu.classList.contains("active")
+  ) {
+    banner.style.opacity = "0.9";
+  } else {
+    banner.style.opacity = "1";
+  }
+});
 
 menuBtn.addEventListener("click", () => {
   menuBtn.classList.toggle("active");
@@ -77,13 +91,59 @@ sizeGigant.addEventListener('mouseout', ()=>{
 });
 
 
-/* window.addEventListener("scroll", () => {
-  if (
-    window.scrollY >= banner.offsetTop &&
-    !mobileMenu.classList.contains("active")
-  ) {
-    banner.style.opacity = "0.9";
-  } else {
-    banner.style.opacity = "1";
+
+
+
+const radio = document.getElementsByName('radio');
+let pom = radio[0];/* sos pomidorowy */
+let czo = radio[1];
+let oli = radio[2];
+pom.addEventListener('click', ()=>{
+  console.log('pomidor');
+  pom.value=1;/* value sosu pomidorowego */
+  czo.value=0;
+  oli.value=0;
+  console.log(valp);
+})
+czo.addEventListener('click', ()=>{
+  pom.value=0;
+  console.log('czosnek');
+})
+oli.addEventListener('click', ()=>{
+  console.log('oliwa z oliwek');
+})
+
+
+
+
+function zmiendanec() {
+  let cola = document.getElementById("cola");
+  let aktualna_wartosc = parseInt(cola.value);
+  cola.value = aktualna_wartosc + 1;
+  console.log(cola.value);
+};
+
+function zmiendaneac() {
+  let cola = document.getElementById("cola");
+  let aktualna_wartosc = parseInt(cola.value);
+  if (aktualna_wartosc > 0) {
+      cola.value = aktualna_wartosc - 1;
+      console.log(cola.value);
+  };
+};
+
+function zmiendanep() {
+  let pepsi = document.getElementById("pepsi");
+  let aktualna_wartosc = parseInt(pepsi.value);
+  pepsi.value = aktualna_wartosc + 1;
+  console.log(pepsi.value);
+}
+
+function zmiendaneap() {
+  let pepsi = document.getElementById("pepsi");
+  let aktualna_wartosc = parseInt(pepsi.value);
+  if (aktualna_wartosc > 0) {
+      pepsi.value = aktualna_wartosc - 1;
+      console.log(pepsi.value);
   }
-}); */
+}

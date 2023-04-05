@@ -4,10 +4,9 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
     <title>Pizzeria</title>
     <!-- LOCAL BOOTSTRAP -->
-    <!--<link href="css/bootstrap.min.css" rel="stylesheet" />
+<!--     <link href="css/bootstrap.min.css" rel="stylesheet" />
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script> -->
     
@@ -28,6 +27,7 @@
 
     <!-- LOCAL STYLES . SCRIPTS -->
     <script src="js/scripts.js" defer></script>
+    <script src="js/ajax.js" defer></script>
     <link href="css/style.css" rel="stylesheet" />
   </head>
   <body>
@@ -35,16 +35,16 @@
       <div class="shopping-cart">
         <div class="row1">        
           <div class="shopping-cart-text">
-            <p class="shopping-cart-text">Twój koszyk</p>
-            <p class="shopping-cart-text">(0)</p>
+            <p class="shopping-cart-text-content">Twój koszyk</p>
+            <p class="shopping-cart-text"><!-- skrypt (x) --></p>
           </div>
-          
           <span class="material-symbols-outlined close-cart">
             cancel
-            </span>
+          </span>
         </div>
+        
 
-        <div>lore</div>
+        <div id="data"></div>
         <br />
       </div>
       <div class="row del">
@@ -59,7 +59,7 @@
           <img alt="logo" src="./assets/logo.png" />
         </div>
         <div class="col-7 col-sm-6 col-md-4">
-          <h3 class="text-center site-name">Pizza-Pizza</h3>
+          <h3 class="text-center site-name">Pizza-Risorante</h3>
         </div>
         <div class="col-2 col-sm-3 col-md-5 col-lg-4">
           <ul class="nav pcMenu">
@@ -82,11 +82,11 @@
 
           <div class="mobileMenu">
             <ul>
+              <span class="open-cart"> Koszyk</span>
+              <li><a href="#">Profil</a></li>
               <li><a href="#">Nasz sklep</a></li>
               <li><a href="#">Galeria</a></li>
               <li><a href="#">Kontakt</a></li>
-              <li><a href="#">Profil</a></li>
-              <span class="open-cart"> Koszyk</span>
             </ul>
           </div>
         </div>
@@ -147,14 +147,14 @@
               <div class="carousel-item active">
                 <img
                   class="d-block w-100"
-                  src="./assets/placeholder.jpg"
+                  src="./assets/vegan1.jpg"
                   alt="First slide"
                 />
               </div>
               <div class="carousel-item">
                 <img
                   class="d-block w-100"
-                  src="./assets/placeholder.jpg"
+                  src="./assets/vegan2.jpg"
                   alt="Second slide"
                 />
               </div>
@@ -274,80 +274,115 @@
             <span class="material-symbols-outlined star"> star </span>
             <p>| 15 opinii</p>
           </div>
-          <p>Sos:</p>
-          <div class="souce">
+          <div class="souce-size">
+            <p>Sos:</p>
+            <form method="post">
+            <div class="souce"><button type="submit">df</button>
+              <label><input type="radio" name="radio" id="" value="magic">
+              <img
+                src="./assets/sos-pomidorowy.jpg"
+                alt=""/></label><button type="submit">df</button><button type="submit">df</button>
+                <label><input type="radio" name="radio" id="" value="lol">
             <img
-            src="./assets/sos-pomidorowy.jpg"
-            alt=""
+              src="./assets/sos-czosnkowy.jpg"
+              alt=""
+              
+            /></label><button type="submit">df</button>
+            <label><input type="radio" name="radio" id="" value="brouh">
+            <img
+              src="./assets/oliwa-z-oliwek.jpg"
+              alt=""
+              
+            /></label><button type="submit">df</button>
             
-          />
-          <img
-            src="./assets/sos-czosnkowy.jpg"
-            alt=""
+            </div>
             
-          />
-          <img
-            src="./assets/oliwa-z-oliwek.jpg"
-            alt=""
-            
-          />
-          
-          </div>
+            </form>
 
-          <p>Rozmiar:</p>
-          <div class="size">
-          <img id="size-small"
-            src="./assets/26.png"
-            alt=""
+
+
             
-          />
-          <img id="size-medium"
-            src="./assets/32.png"
-            alt=""
             
-          />
-          <img id="size-mega"
-            src="./assets/45.png"
-            alt=""
-            
-          />
-          <img id="size-gigant"
-            src="./assets/60.png"
-            alt=""
-            
-          />
+            <p>Rozmiar:</p>
+            <div class="size">
+            <img id="size-small"
+              src="./assets/26.png"
+              alt=""
+              
+            />
+            <img id="size-medium"
+              src="./assets/32.png"
+              alt=""
+              
+            />
+            <img id="size-mega"
+              src="./assets/45.png"
+              alt=""
+              
+            />
+            <img id="size-gigant"
+              src="./assets/60.png"
+              alt=""
+              
+            />
+            </div>
+
           </div>
           
-          <p>Dodatki:</p>
-          <div style="border: 1px solid blue; width: 80%">
-            <div
-              style="
-                border: 1px solid black;
-                border-radius: 50px;
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
-                padding: 20px;
-                margin: 0%;
-                width: 100%;
-              "
-            >
-              <p>Napój:</p>
-            </div>
-            <div
-              style="
-                border: 1px solid black;
-                border-radius: 50px;
-                align-items: center;
-                justify-content: flex-start;
-                padding: 20px;
-                margin: 10px 0 0 0;
-                width: 100%;
-              "
-            >
-              <p>Własne dodatki:</p>
-              <p>()</p>
-            </div>
+          
+          <div style="border: 1px solid blue; width: 80%; margin-top: 160px;">
+            <p>Dodatki:</p>
+
+
+            <div class="col-md-12">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+	  <form>
+
+<input type="number" readonly disabled id="cola" value="0" name="cola" style="border: none; appearance: none;">
+
+<input type="number" id="pepsi" value="0" name="pepsi">
+
+
+</form>
+cola<button onclick="zmiendaneac()">-</button>
+<button onclick="zmiendanec()">+</button>
+
+
+pepsi<button onclick="zmiendaneap()">-</button>
+<button onclick="zmiendanep()">+</button>
+
+
+<p id="wynik" style="background-color: red;"></p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" id="submit" name="submit">submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button id="reset">reset</button>
+             
+           </div>
+       
+       
+
             <div style="display: flex; justify-content: space-around">
               <div
                 style="
@@ -356,7 +391,7 @@
                   align-items: center;
                   width: 20%;
                   margin: 10px 0 0 0;
-                  border: 1px solid black;
+                  border: 1px solid red;
                   border-radius: 50px;
                 "
               >
@@ -386,5 +421,6 @@
     <div class="row">
       <div class="col-lg-6"></div>
     </div>
+    
   </body>
 </html>
